@@ -20,7 +20,7 @@ function createGrid(size) {
         // event listener for mouseover (for dragging effect)
         gridArray[i].addEventListener('mouseover', () => {
             if (isDragging) {
-                gridArray[i].style.backgroundColor = "black";
+                gridArray[i].style.backgroundColor = "#363636";
             }
         });
     }
@@ -81,6 +81,6 @@ document.addEventListener('mouseup', () => {
 mainGrid.addEventListener('mouseover', (event) => {
     if (isMouseDown) {
         isDragging = true;
-        event.target.style.backgroundColor = "black";
+        event.target.style.backgroundColor = "#363636";
     }
 });
