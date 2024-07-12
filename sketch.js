@@ -1,6 +1,7 @@
 const mainGrid = document.querySelector("#grid-container");
 
 let gridArray = [];
+let oldSize = 16;
 function createGrid(size) {
     for (let i = 0; i<size*size; i++) {
         gridArray[i] = document.createElement("div");
@@ -15,4 +16,19 @@ function createGrid(size) {
     document.head.appendChild(style);
 }
 
-createGrid(16);
+function removeGrid() {
+    for (let i = (oldSize*oldSize)-1; i>=0; i--) {
+        gridArray[i].remove();
+        gridArray.pop();
+    }
+}
+
+const sizeButton = document.querySelector("#size-button");
+sizeButton.addEventListener('click', () => {
+   let newSize = parseInt(prompt("What size grid do you want?"));
+   removeGrid();
+   createGrid(newSize);
+   oldSize = newSize;
+});
+
+createGrid(oldSize);
