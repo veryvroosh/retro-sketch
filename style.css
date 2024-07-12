@@ -22,3 +22,19 @@ body {
 .grid-div {
   background-color: floralwhite;
 }
+
+#buttons {
+  display: flex;
+  margin-top: 32px;
+  gap: 128px;
+}
+
+#size-button {
+  height: 50px;
+  width: 100px;
+}
+
+#clear-button {
+  height: 50px;
+  width: 100px;
+}
